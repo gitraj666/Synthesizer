@@ -1,12 +1,19 @@
 __author__ = 'PRITHVIRAJ'
-
-from tkinter import *
+root = tk.Tk()
+import tkinter as tk
 import numpy as np
 import matplotlib.pyplot as plt
-root = Tk()
 
 
-def plot():
+
+#Variables :
+waveform_select = tk.StringVar()
+waveform_select.set("sine")
+default_sinefreq = 50
+f = tk.Frame()
+
+
+def plot_osc1():
     #f = int(input("ENTER no of samples: "))
     Fs = 8000
     f = 5
@@ -26,13 +33,40 @@ def SquareWave(n=5,xmin=0,xmax=10,ymin=-2,Nx=1000,ymax=2,offset=0.5):
     plt.grid()
     plt.show()
 
+def waveform_selected():
+    pass
 
-button1 = Button(root, text="SINE", command=plot)
-button2 = Button(root, text="SAWTOOTH", command=SquareWave)
-button1.pack()
-button2.pack()
+def play_osc1():
+    pass
 
 
+row = 0
+waveforms = ["sine", "triangle", "pulse", "sawtooth", "square"]
+tk.Label(f, text="waveform").grid(row=row, column=0, sticky=tk.E)
+waveform = tk.OptionMenu(f, waveform_select, *waveforms, command=waveform_selected)
+waveform["width"] = 10
+waveform.grid(row=row, column=1)
+row+=1
+tk.Label(f, text="frequency").grid(row=row, column=0, sticky=tk.E)
+e1 = tk.Entry(f)
+e1.insert(10,str(default_sinefreq))
+e1.grid(row=row,column=1)
+row +=1
+tk.Label(f, text="amp").grid(row=row, column=0, sticky=tk.E)
+amp_osc1 = tk.Scale(f, from_=0, to=50, orient=tk.HORIZONTAL)
+amp_osc1.grid(row=row,column=1)
+row +=1
+tk.Label(f, text="phase").grid(row=row, column=0, sticky=tk.E)
+phase_osc1 = tk.Scale(f, from_=0, to=50, orient=tk.HORIZONTAL)
+phase_osc1.grid(row=row,column=1)
+row += 1
+button_plotosc1 = tk.Button(f,text="PLOT",command=plot_osc1)
+button_plotosc1.grid(row=row,column=0)
+button_plotosc1 = tk.Button(f,text="PLAY",command=play_osc1)
+button_plotosc1.grid(row=row,column=1)
+
+
+f.pack(side=tk.TOP)
 root.mainloop()
 
 
