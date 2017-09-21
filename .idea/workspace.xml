@@ -15,7 +15,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Synthesizer$Synthesizer.coverage" NAME="Synthesizer Coverage Results" MODIFIED="1502907934753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Synthesizer$Synthesizer.coverage" NAME="Synthesizer Coverage Results" MODIFIED="1505973048980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -32,7 +32,27 @@
       <file leaf-file-name="keyboard_gui.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/keyboard_gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="38" selection-start="737" selection-end="737" vertical-scroll-proportion="-1.3914591" vertical-offset="1326" max-vertical-offset="2703">
+            <state line="30" column="25" selection-start="625" selection-end="625" vertical-scroll-proportion="0.41576087" vertical-offset="357" max-vertical-offset="3519">
+              <folding>
+                <element signature="e#26#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="soundplayer.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/synthesizer-master/soundplayer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="25" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="2635">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="synth_demo.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/synthesizer-master/synth_demo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="195" column="50" selection-start="7723" selection-end="7723" vertical-scroll-proportion="0.0" vertical-offset="8194" max-vertical-offset="8772">
               <folding />
             </state>
           </provider>
@@ -41,7 +61,7 @@
       <file leaf-file-name="keyboard_gui.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/synthesizer-master/keyboard_gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="36" selection-start="2143" selection-end="2143" vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="15725">
+            <state line="54" column="36" selection-start="2143" selection-end="2143" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="15895">
               <folding />
             </state>
           </provider>
@@ -101,6 +121,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -135,13 +156,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/keyboard_gui.py" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
   </component>
@@ -308,13 +328,13 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="$USER_HOME$/AppData/Local/Programs/Python/Python36-32/python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Synthesizer" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/keyboard_gui.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -352,7 +372,11 @@
       <created>1503773865221</created>
       <updated>1503773865221</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="playing sound now">
+      <created>1505139779863</created>
+      <updated>1505139779863</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -364,11 +388,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15378788" sideWeight="0.670068" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14469697" sideWeight="0.670068" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32993197" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -388,16 +412,56 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="keyboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="keyboard" />
+    <MESSAGE value="playing sound now" />
+    <option name="LAST_COMMIT_MESSAGE" value="playing sound now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/synthesizer-master/soundplayer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="25" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="2635">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synthesizer-master/synth_demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="195" column="50" selection-start="7723" selection-end="7723" vertical-scroll-proportion="0.0" vertical-offset="8194" max-vertical-offset="8772">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synthesizer-master/keyboard_gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="36" selection-start="2143" selection-end="2143" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="15895">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keyboard_gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="8" selection-start="2390" selection-end="2390" vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="2788">
+          <folding>
+            <element signature="e#26#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synthesizer-master/keyboard_gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="36" selection-start="2143" selection-end="2143" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="15895">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/keyboard_gui.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="9" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2703">
-          <folding />
+          <folding>
+            <element signature="e#26#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -411,7 +475,9 @@
     <entry file="file://$PROJECT_DIR$/keyboard_gui.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="56" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1326">
-          <folding />
+          <folding>
+            <element signature="e#26#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -425,7 +491,9 @@
     <entry file="file://$PROJECT_DIR$/keyboard_gui.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="56" selection-start="496" selection-end="496" vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="748">
-          <folding />
+          <folding>
+            <element signature="e#26#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -436,17 +504,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/synthesizer-master/synth_performance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.36120996" vertical-offset="203" max-vertical-offset="765" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synthesizer-master/synth_demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="195" column="50" selection-start="7723" selection-end="7723" vertical-scroll-proportion="0.0" vertical-offset="2975" max-vertical-offset="8772">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/synthesizer-master/keyboard_gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="36" selection-start="2143" selection-end="2143" vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="15725">
+        <state line="54" column="36" selection-start="2143" selection-end="2143" vertical-scroll-proportion="0.0" vertical-offset="14598" max-vertical-offset="15725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synthesizer-master/soundplayer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="25" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="2516">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/keyboard_gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="38" selection-start="737" selection-end="737" vertical-scroll-proportion="-1.3914591" vertical-offset="1326" max-vertical-offset="2703">
-          <folding />
+        <state line="30" column="25" selection-start="625" selection-end="625" vertical-scroll-proportion="0.41576087" vertical-offset="357" max-vertical-offset="3519">
+          <folding>
+            <element signature="e#26#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
