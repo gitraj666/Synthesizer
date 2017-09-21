@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2fe6e6b-0121-49c1-9c87-a256f340413b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/keyboard_gui.py" afterPath="$PROJECT_DIR$/keyboard_gui.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Synthesizer.iws" />
@@ -32,7 +31,7 @@
       <file leaf-file-name="keyboard_gui.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/keyboard_gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="0" selection-start="1861" selection-end="1861" vertical-scroll-proportion="0.35231316" vertical-offset="1043" max-vertical-offset="3570">
+            <state line="67" column="25" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.17081851" vertical-offset="1043" max-vertical-offset="3570">
               <folding>
                 <element signature="e#26#37#0" expanded="true" />
               </folding>
@@ -380,7 +379,11 @@
       <created>1505973124060</created>
       <updated>1505973124060</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="play sound with ampl and freq">
+      <created>1505975212544</created>
+      <updated>1505975212544</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -418,7 +421,8 @@
     <MESSAGE value="keyboard" />
     <MESSAGE value="playing sound now" />
     <MESSAGE value="amplitude and frequency problem fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="amplitude and frequency problem fixed" />
+    <MESSAGE value="play sound with ampl and freq" />
+    <option name="LAST_COMMIT_MESSAGE" value="play sound with ampl and freq" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -537,7 +541,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/keyboard_gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="1861" selection-end="1861" vertical-scroll-proportion="0.35231316" vertical-offset="1043" max-vertical-offset="3570">
+        <state line="67" column="25" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.17081851" vertical-offset="1043" max-vertical-offset="3570">
           <folding>
             <element signature="e#26#37#0" expanded="true" />
           </folding>
