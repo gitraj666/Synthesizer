@@ -19,20 +19,19 @@ default_sinefreq = tk.DoubleVar()
 default_sinefreq.set(5)
 input_freq = tk.DoubleVar()
 input_freq.set(440.0)
-input_phase = tk.DoubleVar()
-input_phase.set(0.0)
+phase = 0
 samplerate = 8000
 amplitude = 1
 
-def plot_sine1(f,amplitude):
+def plot_sine1(f,amplitude,phase):
     Fs = 8000
     #f = 5
     sample = 8000
-    x = np.arange(sample)
-    y = (np.sin(2 * np.pi * f * x / Fs))*amplitude
-    plt.plot(x, y)
-    plt.xlabel('voltage(V)')
-    plt.ylabel('sample(n)')
+    x = (np.arange(sample))
+    y = ((np.sin(2 * np.pi * f * (x) / Fs))*amplitude)
+    plt.plot(x,y)
+    plt.ylabel('voltage(V)')
+    plt.xlabel('sample(n)')
     plt.show()
 
 
@@ -65,16 +64,16 @@ def waveform_selected2():
     waveform__select2 = waveform_select2.get()
     return(waveform__select2)
 
-def play_sine1():
+def play_sine1(freq,amplitude,phase):
     p = pyaudio.PyAudio()
 
     volume = 1.0     # range [0.0, 1.0]
     fs = 44100       # sampling rate, Hz, must be integer
     duration = 2.0   # in seconds, may be float
-    f = 440.0        # sine frequency, Hz, may be float
+    #freq = 300.0        # sine frequency, Hz, may be float
 
     # generate samples, note conversion to float32 array
-    samples = (np.sin(2*np.pi*np.arange(fs*duration)*f/fs)).astype(np.float32)
+    samples = ((np.sin(2*np.pi*np.arange(fs*duration)*freq/fs))*amplitude).astype(np.float32)
 
     # for paFloat32 sample values must be in range [-1.0, 1.0]
     stream = p.open(format=pyaudio.paFloat32,
@@ -117,8 +116,11 @@ def play_sawtooth():
 
 def play_osc1():
     waveform_selected = waveform_selected1()
+    freq = float(input_freq.get())
+    phase = (phase_osc1.get())
+    amplitude = amp_osc1.get()
     if(waveform_selected == "sine"):
-        play_sine1()
+        play_sine1(freq,amplitude,phase)
 
 
 
@@ -128,9 +130,10 @@ def play_osc2():
 def plot_osc1():
     waveform_selected = waveform_selected1()
     freq = float(input_freq.get())
+    phase = (phase_osc1.get())
     amplitude = amp_osc1.get()
     if(waveform_selected == "sine"):
-        plot_sine1(freq,amplitude)
+        plot_sine1(freq,amplitude,phase)
 
     if(waveform_selected == "sawtooth"):
         plot_sawtooth()
