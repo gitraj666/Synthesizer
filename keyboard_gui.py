@@ -10,6 +10,7 @@ root = tk.Tk()
 #Variables :
 f1 = tk.Frame()
 f2 = tk.Frame()
+f3 = tk.Frame()
 PyAudio = pyaudio.PyAudio
 waveform_select = tk.StringVar()
 waveform_select.set("sine")
@@ -26,8 +27,9 @@ amplitude = 1
 def plot_sine1(f,amplitude,phase):
     Fs = 8000
     #f = 5
+    phase = phase*1000
     sample = 8000
-    x = (np.arange(sample))
+    x = (np.arange(sample))+phase
     y = ((np.sin(2 * np.pi * f * (x) / Fs))*amplitude)
     plt.plot(x,y)
     plt.ylabel('voltage(V)')
@@ -35,20 +37,32 @@ def plot_sine1(f,amplitude,phase):
     plt.show()
 
 
-def plot_sawtooth(n=5,xmin=0,xmax=10,ymin=-2,ymax=2,offset=0.5):
-    x=np.sort(np.concatenate([np.arange(xmin, xmax)-1E-6,np.arange(xmin, xmax)+1E-6]))
-    y=np.array(x+n+offset,dtype=int)%2
+def plot_sawtooth(freq,amplitude,phase):
+    n=5
+    xmin=0+phase
+    xmax=10+phase
+    ymin=-2-amplitude
+    ymax=2+amplitude
+    offset=0.5
+    x=(np.sort(np.concatenate([np.arange(xmin, xmax)-1E-6,np.arange(xmin, xmax)+1E-6])))
+    y=(np.array(x+n+offset,dtype=int)%2)*amplitude
     plt.plot(x, y)
     plt.axis([xmin, xmax, ymin, ymax])
     plt.grid()
     plt.show()
 
-def plot_square(n=5,xmin=0,xmax=10,ymin=-2,ymax=2,offset=1):
+def plot_square(freq,amplitude,phase):
 
+    n=5
+    xmin=0+phase
+    xmax=10+phase
+    ymin=-2-amplitude
+    ymax=2+amplitude
+    offset=1
     x=np.sort(np.concatenate([np.arange(xmin, xmax)-1E-6,np.arange(xmin, xmax)+1E-6]))
     #You can use np.linspace(xmin,xmax,Nx) if you want the intermediate points
 
-    y=np.array(x+n+offset,dtype=int)%2
+    y=((np.array(x+n+offset,dtype=int)%2)*amplitude)
 
 
     plt.plot(x, y)
@@ -89,7 +103,7 @@ def play_sine1(freq,amplitude,phase):
 
     p.terminate()
 
-def play_sawtooth():
+def play_sawtooth1(freq,amplitude,phase):
     p = pyaudio.PyAudio()
 
     volume = 1.0     # range [0.0, 1.0]
@@ -98,8 +112,15 @@ def play_sawtooth():
     f = 440.0        # sine frequency, Hz, may be float
 
     # generate samples, note conversion to float32 array
-    samples = (np.sin(2*np.pi*np.arange(fs*duration)*f/fs)).astype(np.float32)
 
+    n=5
+    xmin=0+phase
+    xmax=10+phase
+    ymin=-2-amplitude
+    ymax=2+amplitude
+    offset=0.5
+    x=(np.sort(np.concatenate([np.arange(xmin, xmax)-1E-6,np.arange(xmin, xmax)+1E-6])))
+    y=(np.array(x+n+offset,dtype=int)%2)*amplitude
     # for paFloat32 sample values must be in range [-1.0, 1.0]
     stream = p.open(format=pyaudio.paFloat32,
                     channels=1,
@@ -107,7 +128,7 @@ def play_sawtooth():
                     output=True)
 
     # play. May repeat with different volume values (if done interactively)
-    stream.write(volume*samples)
+    stream.write(volume*y)
 
     stream.stop_stream()
     stream.close()
@@ -121,6 +142,9 @@ def play_osc1():
     amplitude = amp_osc1.get()
     if(waveform_selected == "sine"):
         play_sine1(freq,amplitude,phase)
+
+    if(waveform_selected== "sawtooth"):
+        play_sawtooth1(freq,amplitude,phase)
 
 
 
@@ -136,10 +160,10 @@ def plot_osc1():
         plot_sine1(freq,amplitude,phase)
 
     if(waveform_selected == "sawtooth"):
-        plot_sawtooth()
+        plot_sawtooth(freq,amplitude,phase)
 
     if(waveform_selected=="square"):
-        plot_square()
+        plot_square(freq,amplitude,phase)
 
 def plot_osc2():
     pass
@@ -196,9 +220,36 @@ button_plotosc2.grid(row=row,column=2)
 button_plotosc2 = tk.Button(f2,text="PLAY",command=play_osc2)
 button_plotosc2.grid(row=row,column=3)
 
+def keys():
+    white_key_width = 30
+    white_key_height = 110
+    black_key_width = white_key_width * 0.5
+    black_key_height = white_key_height * 0.6
+    num_octaves = 5
+    first_octave = 2
+    x_offset = 3
+    y_offset = 20
+    canvas = tk.Canvas(width=white_key_width*num_octaves*7+2, height=white_key_height+10+y_offset, borderwidth=0)
+    # white keys:
+    for key_nr, key in enumerate("CDEFGAB"*num_octaves):
+        octave = first_octave+key_nr//7
+        x = key_nr * white_key_width
+        key_rect = canvas.create_rectangle(x+x_offset, y_offset, x+white_key_width+x_offset, white_key_height+y_offset, fill="white", outline="gray50", width=1, activewidth=2)
+        canvas.create_text(x+white_key_width/2+2, 1, text=key, anchor=tk.N, fill="gray")
+
+
+    # black keys:
+    for key_nr, key in enumerate((["C#", "D#", None, "F#", "G#", "A#", None]*num_octaves)[:-1]):
+        if key:
+            octave = first_octave + key_nr // 7
+            x = key_nr * white_key_width + white_key_width*0.75
+            key_rect = canvas.create_rectangle(x+x_offset, y_offset, x+black_key_width+x_offset, black_key_height+y_offset, fill="black", outline="gray50", width=1, activewidth=2)
+    canvas.pack(side=tk.BOTTOM)
+
 
 f1.pack(side=tk.LEFT)
 f2.pack(side=tk.RIGHT)
+keys()
 root.mainloop()
 
 
