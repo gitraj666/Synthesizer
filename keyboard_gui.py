@@ -169,6 +169,20 @@ def plot_osc1():
 def plot_osc2():
     pass
 
+def change_parameters(note,octave):
+    if(note=="C" and octave==4):
+        input_freq.set(261.6255653005986)
+        amp_osc1.set(1)
+
+    if(note=="D" and octave==4):
+        input_freq.set(293.6647679174076)
+        amp_osc1.set(1)
+
+    play_osc1()
+
+def stop_sound():
+    pass
+
 def keys():
         white_key_width = 30
         white_key_height = 110
@@ -184,9 +198,10 @@ def keys():
             octave = first_octave+key_nr//7
             def key_pressed(event, note=key, octave=octave):
                 force = min(white_key_height, event.y*1.08)/white_key_height   # @todo control output volume, unused for now...
-                play_osc1()
+                change_parameters(note,octave)
+                print(octave)
             def key_released(event, note=key, octave=octave):
-                pass
+                stop_sound()
             x = key_nr * white_key_width
             key_rect = canvas.create_rectangle(x+x_offset, y_offset, x+white_key_width+x_offset, white_key_height+y_offset, fill="white", outline="gray50", width=1, activewidth=2)
             canvas.tag_bind(key_rect, "<ButtonPress-1>", key_pressed)

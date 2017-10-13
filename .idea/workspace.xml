@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2fe6e6b-0121-49c1-9c87-a256f340413b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/keyboard_gui.py" afterPath="$PROJECT_DIR$/keyboard_gui.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Synthesizer.iws" />
@@ -14,8 +15,8 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Synthesizer$Synthesizer.coverage" NAME="Synthesizer Coverage Results" MODIFIED="1507922526531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Synthesizer$mainkeyboard.coverage" NAME="mainkeyboard Coverage Results" MODIFIED="1507912325299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/synthesizer-master" />
+    <SUITE FILE_PATH="coverage/Synthesizer$Synthesizer.coverage" NAME="Synthesizer Coverage Results" MODIFIED="1507924582442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Synthesizer$mainkeyboard.coverage" NAME="mainkeyboard Coverage Results" MODIFIED="1507924511077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/synthesizer-master" />
     <SUITE FILE_PATH="coverage/Synthesizer$keys.coverage" NAME="keys Coverage Results" MODIFIED="1507910771924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -33,7 +34,7 @@
       <file leaf-file-name="keyboard_gui.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/keyboard_gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="186" column="27" selection-start="5035" selection-end="5035" vertical-scroll-proportion="0.32604736" vertical-offset="2983" max-vertical-offset="4794">
+            <state line="178" column="23" selection-start="4545" selection-end="4545" vertical-scroll-proportion="0.54826957" vertical-offset="2725" max-vertical-offset="5049">
               <folding>
                 <element signature="e#26#37#0" expanded="true" />
               </folding>
@@ -53,7 +54,7 @@
       <file leaf-file-name="keyboard_gui.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/synthesizer-master/keyboard_gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="299" column="21" selection-start="11550" selection-end="14129" vertical-scroll-proportion="0.0" vertical-offset="4483" max-vertical-offset="15725">
+            <state line="773" column="41" selection-start="37545" selection-end="37545" vertical-scroll-proportion="0.0" vertical-offset="12550" max-vertical-offset="15725">
               <folding />
             </state>
           </provider>
@@ -438,7 +439,11 @@
       <created>1507922603959</created>
       <updated>1507922603959</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="keyboard is working now">
+      <created>1507922620341</created>
+      <updated>1507922620341</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -471,7 +476,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14848486" sideWeight="0.670068" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14848486" sideWeight="0.6717687" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -605,14 +610,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/synthesizer-master/keyboard_gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="299" column="21" selection-start="11550" selection-end="14129" vertical-scroll-proportion="0.0" vertical-offset="4483" max-vertical-offset="15725">
+        <state line="773" column="41" selection-start="37545" selection-end="37545" vertical-scroll-proportion="0.0" vertical-offset="12550" max-vertical-offset="15725">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/keyboard_gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="27" selection-start="5035" selection-end="5035" vertical-scroll-proportion="0.32604736" vertical-offset="2983" max-vertical-offset="4794">
+        <state line="178" column="23" selection-start="4545" selection-end="4545" vertical-scroll-proportion="0.54826957" vertical-offset="2725" max-vertical-offset="5049">
           <folding>
             <element signature="e#26#37#0" expanded="true" />
           </folding>
