@@ -39,7 +39,7 @@ def plot_sine1(f,amplitude,phase):
     plt.show()
 
 
-def plot_sawtooth(freq,amplitude,phase):
+def plot_triangle(freq,amplitude,phase):
     n=5
     xmin=0+phase
     xmax=10+phase
@@ -104,7 +104,7 @@ def play_sine1(freq,amplitude,phase):
 
     p.terminate()
 
-def play_sawtooth1(freq,amplitude,phase):
+def play_triangle1(freq,amplitude,phase):
     p = pyaudio.PyAudio()
 
     volume = 1.0     # range [0.0, 1.0]
@@ -144,8 +144,8 @@ def play_osc1():
     if(waveform_selected == "sine"):
         play_sine1(freq,amplitude,phase)
 
-    if(waveform_selected== "sawtooth"):
-        play_sawtooth1(freq,amplitude,phase)
+    if(waveform_selected== "triangle"):
+        play_triangle1(freq,amplitude,phase)
 
 
 
@@ -160,8 +160,8 @@ def plot_osc1():
     if(waveform_selected == "sine"):
         plot_sine1(freq,amplitude,phase)
 
-    if(waveform_selected == "sawtooth"):
-        plot_sawtooth(freq,amplitude,phase)
+    if(waveform_selected == "triangle"):
+        plot_triangle(freq,amplitude,phase)
 
     if(waveform_selected=="square"):
         plot_square(freq,amplitude,phase)
@@ -176,6 +176,10 @@ def change_parameters(note,octave):
 
     if(note=="D" and octave==4):
         input_freq.set(293.6647679174076)
+        amp_osc1.set(1)
+
+    if(note=="E" and octave==4):
+        input_freq.set(329.6275569128699)
         amp_osc1.set(1)
 
     play_osc1()
@@ -199,7 +203,7 @@ def keys():
             def key_pressed(event, note=key, octave=octave):
                 force = min(white_key_height, event.y*1.08)/white_key_height   # @todo control output volume, unused for now...
                 change_parameters(note,octave)
-                print(octave)
+                print(note,octave)
             def key_released(event, note=key, octave=octave):
                 stop_sound()
             x = key_nr * white_key_width
