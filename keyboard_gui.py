@@ -104,7 +104,7 @@ def play_sine1(freq,amplitude,phase):
 
     p.terminate()
 
-def play_triangle1(freq,amplitude,phase):
+def play_sawtooth1(freq,amplitude,phase):
     p = pyaudio.PyAudio()
 
     volume = 1.0     # range [0.0, 1.0]
