@@ -4,6 +4,7 @@ import pyaudio
 import tkinter as tk
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy import signal
 from tkinter import *
 root = tk.Tk()
 root.state('zoomed')
@@ -65,7 +66,6 @@ def plot_square(freq,amplitude,phase):
 
     y=((np.array(x+n+offset,dtype=int)%2)*amplitude)
 
-
     plt.plot(x, y)
     plt.axis([xmin, xmax, ymin, ymax])
     plt.grid()
@@ -98,7 +98,7 @@ def play_sine1(freq,amplitude,phase):
 
     # play. May repeat with different volume values (if done interactively) 
     stream.write(volume*samples)
-
+    print(samples)
     stream.stop_stream()
     stream.close()
 
@@ -110,18 +110,11 @@ def play_triangle1(freq,amplitude,phase):
     volume = 1.0     # range [0.0, 1.0]
     fs = 44100       # sampling rate, Hz, must be integer
     duration = 2.0   # in seconds, may be float
-    f = 440.0        # sine frequency, Hz, may be float
+    #freq = 300.0        # sine frequency, Hz, may be float
 
     # generate samples, note conversion to float32 array
+    samples = ((signal.sawtooth(2*np.pi*np.arange(fs*duration)*freq/fs))*amplitude).astype(np.float32)
 
-    n=5
-    xmin=0+phase
-    xmax=10+phase
-    ymin=-2-amplitude
-    ymax=2+amplitude
-    offset=0.5
-    x=(np.sort(np.concatenate([np.arange(xmin, xmax)-1E-6,np.arange(xmin, xmax)+1E-6])))
-    y=(np.array(x+n+offset,dtype=int)%2)*amplitude
     # for paFloat32 sample values must be in range [-1.0, 1.0]
     stream = p.open(format=pyaudio.paFloat32,
                     channels=1,
@@ -129,8 +122,33 @@ def play_triangle1(freq,amplitude,phase):
                     output=True)
 
     # play. May repeat with different volume values (if done interactively)
-    stream.write(volume*y)
+    stream.write(volume*samples)
+    print(samples)
+    stream.stop_stream()
+    stream.close()
 
+    p.terminate()
+
+def play_square1(freq,amplitude,phase):
+    p = pyaudio.PyAudio()
+
+    volume = 1.0     # range [0.0, 1.0]
+    fs = 44100       # sampling rate, Hz, must be integer
+    duration = 2.0   # in seconds, may be float
+    #freq = 300.0        # sine frequency, Hz, may be float
+
+    # generate samples, note conversion to float32 array
+    samples = ((signal.square(2*np.pi*np.arange(fs*duration)*freq/fs))*amplitude).astype(np.float32)
+
+    # for paFloat32 sample values must be in range [-1.0, 1.0]
+    stream = p.open(format=pyaudio.paFloat32,
+                    channels=1,
+                    rate=fs,
+                    output=True)
+
+    # play. May repeat with different volume values (if done interactively)
+    stream.write(volume*samples)
+    print(samples)
     stream.stop_stream()
     stream.close()
 
@@ -146,6 +164,9 @@ def play_osc1():
 
     if(waveform_selected== "triangle"):
         play_triangle1(freq,amplitude,phase)
+
+    if(waveform_selected== "square"):
+        play_square1(freq,amplitude,phase)
 
 
 
