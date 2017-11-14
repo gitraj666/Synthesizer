@@ -267,11 +267,11 @@ e1.insert(10,str(default_sinefreq))
 e1.grid(row=row,column=1)
 row +=1
 tk.Label(f1, text="amp").grid(row=row, column=0, sticky=tk.E)
-amp_osc1 = tk.Scale(f1, from_=0, to=50, orient=tk.HORIZONTAL)
+amp_osc1 = tk.Scale(f1, from_=0, to=1, orient=tk.HORIZONTAL)
 amp_osc1.grid(row=row,column=1)
 row +=1
 tk.Label(f1, text="phase").grid(row=row, column=0, sticky=tk.E)
-phase_osc1 = tk.Scale(f1, from_=0, to=50, orient=tk.HORIZONTAL)
+phase_osc1 = tk.Scale(f1, from_=0, to=5, orient=tk.HORIZONTAL)
 phase_osc1.grid(row=row,column=1)
 row += 1
 button_plotosc1 = tk.Button(f1,text="PLOT",command=plot_osc1)
