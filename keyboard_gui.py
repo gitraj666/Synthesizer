@@ -162,8 +162,8 @@ def play_osc1():
     if(waveform_selected == "sine"):
         play_sine1(freq,amplitude,phase)
 
-    if(waveform_selected== "triangle"):
-        play_triangle1(freq,amplitude,phase)
+    if(waveform_selected== "sawtooth"):
+        play_sawtooth1(freq,amplitude,phase)
 
     if(waveform_selected== "square"):
         play_square1(freq,amplitude,phase)
@@ -190,18 +190,39 @@ def plot_osc1():
 def plot_osc2():
     pass
 
-def change_parameters(note,octave):
-    if(note=="C" and octave==4):
+def change_parameters(note,octave,keypressed=0):
+    if(note=="C" and octave==4 or keypressed=="a"):
         input_freq.set(261.6255653005986)
         amp_osc1.set(1)
 
-    if(note=="D" and octave==4):
+    if(note=="D" and octave==4 or keypressed=="s"):
         input_freq.set(293.6647679174076)
         amp_osc1.set(1)
 
-    if(note=="E" and octave==4):
+    if(note=="E" and octave==4 or keypressed=="d"):
         input_freq.set(329.6275569128699)
         amp_osc1.set(1)
+
+    if(note=="F" and octave==4 or keypressed=="f"):
+        input_freq.set(349.2282314330039)
+        amp_osc1.set(1)
+
+    if(note=="G" and octave==4 or keypressed=="g"):
+        input_freq.set(391.99543598174927)
+        amp_osc1.set(1)
+
+    if(note=="A" and octave==4 or keypressed=="h"):
+        input_freq.set(440.0)
+        amp_osc1.set(1)
+
+    if(note=="B" and octave==4 or keypressed=="j"):
+        input_freq.set(493.8833012561241)
+        amp_osc1.set(1)
+
+    if(note=="C" and octave==5 or keypressed=="k"):
+        input_freq.set(523.2511306011972)
+        amp_osc1.set(1)
+
 
     play_osc1()
 
@@ -252,9 +273,32 @@ def keys():
         canvas.pack(padx=10,side="bottom")
 
 
+def keyboard():
+    def keyup(e):
+        print ('up', e.char)
+    def keydown(e):
+        pressed = e.char
+        change_parameters(0,0,pressed)
+
+
+    f3.bind("<KeyPress>", keydown)
+    f3.bind("<KeyRelease>", keyup)
+    f3.pack()
+    f3.focus_set()
+
+
+def checkBoxState():
+    checked = var1.get()
+    if(checked ==1):
+        print(checked)
+        e1.config(state=DISABLED)
+        e2.config(state=DISABLED)
+        keyboard()
 
 #Oscillator 1:
 row = 0
+tk.Label(f1,text="  Oscillator 1 :").grid(row=row,column=0,sticky=tk.E)
+row += 2
 waveforms = ["sine", "triangle", "pulse", "sawtooth", "square"]
 tk.Label(f1, text="waveform").grid(row=row, column=0, sticky=tk.E)
 waveform = tk.OptionMenu(f1, waveform_select, *waveforms, command=waveform_selected1)
@@ -279,8 +323,16 @@ button_plotosc1.grid(row=row,column=0)
 button_plotosc1 = tk.Button(f1,text="PLAY",command=play_osc1)
 button_plotosc1.grid(row=row,column=1)
 
+#checkbox for keyboard
+row +=1
+var1 = IntVar()
+Checkbutton(f1, text="KEYBOARD", variable=var1,command=checkBoxState).grid(row=row,column=0, sticky=tk.E)
+
+
 #Oscillator 2:
 row = 0
+tk.Label(f2,text="  Oscillator 2 :").grid(row=row,column=2,sticky=tk.E)
+row += 2
 waveforms2 = ["sine", "triangle", "pulse", "sawtooth", "square"]
 tk.Label(f2, text="waveform").grid(row=row, column=2, sticky=tk.E)
 waveform2 = tk.OptionMenu(f2, waveform_select2, *waveforms2, command=waveform_selected2)
@@ -288,9 +340,9 @@ waveform2["width"] = 10
 waveform2.grid(row=row, column=3)
 row+=1
 tk.Label(f2, text="frequency").grid(row=row, column=2, sticky=tk.E)
-e1 = tk.Entry(f2)
-e1.insert(10,str(default_sinefreq))
-e1.grid(row=row,column=3)
+e2 = tk.Entry(f2)
+e2.insert(10,str(default_sinefreq))
+e2.grid(row=row,column=3)
 row +=1
 tk.Label(f2, text="amp").grid(row=row, column=2, sticky=tk.E)
 amp_osc2 = tk.Scale(f2, from_=0, to=50, orient=tk.HORIZONTAL)
