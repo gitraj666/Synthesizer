@@ -33,7 +33,7 @@
       <file leaf-file-name="keyboard_gui.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/keyboard_gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="443" column="70" selection-start="13376" selection-end="13376" vertical-scroll-proportion="11.4262295" vertical-offset="1258" max-vertical-offset="8398">
+            <state line="443" column="70" selection-start="13376" selection-end="13376" vertical-scroll-proportion="1.3624772" vertical-offset="6783" max-vertical-offset="8398">
               <folding>
                 <element signature="e#26#37#0" expanded="true" />
               </folding>
@@ -499,7 +499,11 @@
       <created>1520005059948</created>
       <updated>1520005059948</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Some Touchups Done">
+      <created>1520005070835</created>
+      <updated>1520005070835</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -669,7 +673,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/keyboard_gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="443" column="70" selection-start="13376" selection-end="13376" vertical-scroll-proportion="11.4262295" vertical-offset="1258" max-vertical-offset="8398">
+        <state line="443" column="70" selection-start="13376" selection-end="13376" vertical-scroll-proportion="1.3624772" vertical-offset="6783" max-vertical-offset="8398">
           <folding>
             <element signature="e#26#37#0" expanded="true" />
           </folding>
