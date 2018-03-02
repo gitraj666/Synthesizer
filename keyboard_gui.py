@@ -7,13 +7,14 @@ import matplotlib.pyplot as plt
 from scipy import signal
 from tkinter import *
 root = tk.Tk()
-root.state('zoomed')
+#root.state('zoomed')
 
 
 #Variables :
 f1 = tk.Frame()
 f2 = tk.Frame()
 f3 = tk.Frame()
+f4 = tk.Frame()
 PyAudio = pyaudio.PyAudio
 waveform_select = tk.StringVar()
 waveform_select.set("sine")
@@ -26,6 +27,8 @@ input_freq.set(440.0)
 phase = 0
 samplerate = 8000
 amplitude = 1
+v = tk.IntVar()
+
 
 def plot_sine1(f,amplitude,phase):
     Fs = 8000
@@ -71,6 +74,19 @@ def plot_square(freq,amplitude,phase):
     plt.grid()
     plt.show()
 
+def plot_noise1(f,amplitude,phase):
+    Fs = 8000
+    #f = 5
+    phase = phase*1000
+    sample = 8000
+    x = (np.arange(sample))+phase
+    y = (float(amplitude) * random.uniform(-1, 1) for _ in count(0))
+    plt.plot(x,y)
+    plt.ylabel('voltage(V)')
+    plt.xlabel('sample(n)')
+    plt.show()
+
+
 def waveform_selected1(*args):
     waveform__select = waveform_select.get()
     return(waveform__select)
@@ -79,12 +95,12 @@ def waveform_selected2():
     waveform__select2 = waveform_select2.get()
     return(waveform__select2)
 
-def play_sine1(freq,amplitude,phase):
+def play_sine1(freq,amplitude,duration = 2.0):
     p = pyaudio.PyAudio()
 
     volume = 1.0     # range [0.0, 1.0]
     fs = 44100       # sampling rate, Hz, must be integer
-    duration = 2.0   # in seconds, may be float
+    #duration = 2.0   # in seconds, may be float
     #freq = 300.0        # sine frequency, Hz, may be float
 
     # generate samples, note conversion to float32 array
@@ -160,18 +176,43 @@ def play_osc1():
     phase = (phase_osc1.get())
     amplitude = amp_osc1.get()
     if(waveform_selected == "sine"):
-        play_sine1(freq,amplitude,phase)
+        play_sine1(freq,amplitude)
 
     if(waveform_selected== "sawtooth"):
-        play_sawtooth1(freq,amplitude,phase)
+        play_sawtooth1(freq,amplitude)
 
     if(waveform_selected== "square"):
-        play_square1(freq,amplitude,phase)
+        play_square1(freq,amplitude)
 
+
+def play_osc1_arpg():
+    waveform_selected = waveform_selected1()
+    freq = float(input_freq.get())
+    phase = (phase_osc1.get())
+    amplitude = amp_osc1.get()
+    if(waveform_selected == "sine"):
+        play_sine1(freq,amplitude,0.5)
+
+    if(waveform_selected== "sawtooth"):
+        play_sawtooth1(freq,amplitude,0.5)
+
+    if(waveform_selected== "square"):
+        play_square1(freq,amplitude,0.5)
 
 
 def play_osc2():
-    pass
+    waveform_selected = waveform_selected1()
+    freq = float(input_freq.get())
+    phase = (phase_osc1.get())
+    amplitude = amp_osc1.get()
+    if(waveform_selected == "sine"):
+        play_sine1(freq,amplitude)
+
+    if(waveform_selected== "sawtooth"):
+        play_sawtooth1(freq,amplitude)
+
+    if(waveform_selected== "square"):
+        play_square1(freq,amplitude)
 
 def plot_osc1():
     waveform_selected = waveform_selected1()
@@ -187,8 +228,25 @@ def plot_osc1():
     if(waveform_selected=="square"):
         plot_square(freq,amplitude,phase)
 
+    if(waveform_select=="noise"):
+        plot_noise1(freq,amplitude,phase)
+
 def plot_osc2():
-    pass
+    waveform_selected = waveform_selected1()
+    freq = float(input_freq.get())
+    phase = (phase_osc1.get())
+    amplitude = amp_osc1.get()
+    if(waveform_selected == "sine"):
+        plot_sine1(freq,amplitude,phase)
+
+    if(waveform_selected == "triangle"):
+        plot_triangle(freq,amplitude,phase)
+
+    if(waveform_selected=="square"):
+        plot_square(freq,amplitude,phase)
+
+
+
 
 def change_parameters(note,octave,keypressed=0):
     if(note=="C" and octave==4 or keypressed=="a"):
@@ -225,6 +283,44 @@ def change_parameters(note,octave,keypressed=0):
 
 
     play_osc1()
+
+def change_parameters_arpg(note,octave,keypressed=0):
+    if(note=="C" and octave==4 or keypressed=="a"):
+        input_freq.set(261.6255653005986)
+        amp_osc1.set(1)
+
+    if(note=="D" and octave==4 or keypressed=="s"):
+        input_freq.set(293.6647679174076)
+        amp_osc1.set(1)
+
+    if(note=="E" and octave==4 or keypressed=="d"):
+        input_freq.set(329.6275569128699)
+        amp_osc1.set(1)
+
+    if(note=="F" and octave==4 or keypressed=="f"):
+        input_freq.set(349.2282314330039)
+        amp_osc1.set(1)
+
+    if(note=="G" and octave==4 or keypressed=="g"):
+        input_freq.set(391.99543598174927)
+        amp_osc1.set(1)
+
+    if(note=="A" and octave==4 or keypressed=="h"):
+        input_freq.set(440.0)
+        amp_osc1.set(1)
+
+    if(note=="B" and octave==4 or keypressed=="j"):
+        input_freq.set(493.8833012561241)
+        amp_osc1.set(1)
+
+    if(note=="C" and octave==5 or keypressed=="k"):
+        input_freq.set(523.2511306011972)
+        amp_osc1.set(1)
+
+
+    play_osc1_arpg()
+
+
 
 def stop_sound():
     pass
@@ -295,11 +391,23 @@ def checkBoxState():
         e2.config(state=DISABLED)
         keyboard()
 
+def effects():
+    print(v.get())
+    if v.get()==1:
+        arpeggio()
+
+def arpeggio():
+    for i in range(3):
+        change_parameters_arpg("C",4)
+        change_parameters_arpg("E",4)
+        change_parameters_arpg("G",4)
+
+
 #Oscillator 1:
 row = 0
 tk.Label(f1,text="  Oscillator 1 :").grid(row=row,column=0,sticky=tk.E)
 row += 2
-waveforms = ["sine", "triangle", "pulse", "sawtooth", "square"]
+waveforms = ["sine", "triangle", "pulse", "sawtooth", "square","noise"]
 tk.Label(f1, text="waveform").grid(row=row, column=0, sticky=tk.E)
 waveform = tk.OptionMenu(f1, waveform_select, *waveforms, command=waveform_selected1)
 waveform["width"] = 10
@@ -333,7 +441,7 @@ Checkbutton(f1, text="KEYBOARD", variable=var1,command=checkBoxState).grid(row=r
 row = 0
 tk.Label(f2,text="  Oscillator 2 :").grid(row=row,column=2,sticky=tk.E)
 row += 2
-waveforms2 = ["sine", "triangle", "pulse", "sawtooth", "square"]
+waveforms2 = ["sine", "triangle", "pulse", "sawtooth", "square","noise"]
 tk.Label(f2, text="waveform").grid(row=row, column=2, sticky=tk.E)
 waveform2 = tk.OptionMenu(f2, waveform_select2, *waveforms2, command=waveform_selected2)
 waveform2["width"] = 10
@@ -358,10 +466,22 @@ button_plotosc2 = tk.Button(f2,text="PLAY",command=play_osc2)
 button_plotosc2.grid(row=row,column=3)
 
 
+#Options for effects
+row = 0
+tk.Label(f4,text="  Effects :").grid(row=row,column=0,sticky=tk.E)
+row += 1
+radio = tk.Radiobutton(f4,text="Chords",variable=v,value=1,command=effects)
+radio.grid(row=row,column=0,sticky=tk.E)
+row += 1
+radio = tk.Radiobutton(f4,text="Arpeggio 3",variable=v,value=2,command=effects)
+radio.grid(row=row,column=0,sticky=tk.E)
+
+
 
 keys()
 f1.pack(side=tk.LEFT)
 f2.pack(padx=15,side=tk.LEFT)
+f4.pack(side=tk.LEFT)
 
 root.mainloop()
 

@@ -15,8 +15,8 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Synthesizer$Synthesizer.coverage" NAME="Synthesizer Coverage Results" MODIFIED="1518536802389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Synthesizer$mainkeyboard.coverage" NAME="mainkeyboard Coverage Results" MODIFIED="1518534315806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/synthesizer-master" />
+    <SUITE FILE_PATH="coverage/Synthesizer$Synthesizer.coverage" NAME="Synthesizer Coverage Results" MODIFIED="1520004250784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Synthesizer$mainkeyboard.coverage" NAME="mainkeyboard Coverage Results" MODIFIED="1520002459572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/synthesizer-master" />
     <SUITE FILE_PATH="coverage/Synthesizer$keys.coverage" NAME="keys Coverage Results" MODIFIED="1507910771924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -34,7 +34,7 @@
       <file leaf-file-name="keyboard_gui.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/keyboard_gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="331" column="14" selection-start="10414" selection-end="10414" vertical-scroll-proportion="0.5974499" vertical-offset="5299" max-vertical-offset="6358">
+            <state line="443" column="70" selection-start="13376" selection-end="13376" vertical-scroll-proportion="11.4262295" vertical-offset="1258" max-vertical-offset="8398">
               <folding>
                 <element signature="e#26#37#0" expanded="true" />
               </folding>
@@ -45,7 +45,7 @@
       <file leaf-file-name="keyboard_gui.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/synthesizer-master/keyboard_gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="674" column="35" selection-start="33330" selection-end="33330" vertical-scroll-proportion="0.0" vertical-offset="5827" max-vertical-offset="15725">
+            <state line="674" column="35" selection-start="33330" selection-end="33330" vertical-scroll-proportion="0.0" vertical-offset="12665" max-vertical-offset="15725">
               <folding />
             </state>
           </provider>
@@ -123,7 +123,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -176,6 +175,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -492,7 +492,11 @@
       <created>1510676747300</created>
       <updated>1510676747300</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Keyboard functionality added">
+      <created>1518536888110</created>
+      <updated>1518536888110</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -524,7 +528,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15530303" sideWeight="0.6717687" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15984848" sideWeight="0.6717687" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -555,7 +559,8 @@
     <MESSAGE value="keyboard is working now" />
     <MESSAGE value="Sine triangle and square sound generated" />
     <MESSAGE value="Sine (**sawtooth)  and square sound generated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sine (**sawtooth)  and square sound generated" />
+    <MESSAGE value="Keyboard functionality added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Keyboard functionality added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -653,14 +658,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/synthesizer-master/keyboard_gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="674" column="35" selection-start="33330" selection-end="33330" vertical-scroll-proportion="0.0" vertical-offset="10918" max-vertical-offset="15725">
+        <state line="674" column="35" selection-start="33330" selection-end="33330" vertical-scroll-proportion="0.0" vertical-offset="5508" max-vertical-offset="15725">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/keyboard_gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="331" column="14" selection-start="10414" selection-end="10414" vertical-scroll-proportion="0.5974499" vertical-offset="5299" max-vertical-offset="6358">
+        <state line="443" column="70" selection-start="13376" selection-end="13376" vertical-scroll-proportion="11.4262295" vertical-offset="1258" max-vertical-offset="8398">
           <folding>
             <element signature="e#26#37#0" expanded="true" />
           </folding>
